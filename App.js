@@ -125,6 +125,7 @@ class CarsView extends Component {
             color='#517fa4'
             size={32}
             onPress={() => this.deleteCar({ id: lastId })}
+            containerStyle={{padding: 8}}
           />
 
           <Icon
@@ -139,6 +140,7 @@ class CarsView extends Component {
                 ScreenCars: this,
               });
             }}
+            containerStyle={{padding: 8}}
           />
           <Icon
             name='ios-search'
@@ -152,6 +154,7 @@ class CarsView extends Component {
                 ScreenCars: this,
               });
             }}
+            containerStyle={{padding: 8}}
           />
         </View>
         <ScrollView style={{ width: "100%" }}>
@@ -449,10 +452,9 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   buttons: {
-    paddingTop: 8,
+    // paddingTop: 8,
     flexDirection: 'row',
     justifyContent: 'space-around',
-    // backgroundColor: '#F5FCFF',
   },
   container: {
     flex: 1,
