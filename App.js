@@ -71,8 +71,8 @@ class CarsView extends Component {
       .catch(error => {
         console.log(error);
         Alert.alert(
-          'Load Car error',
-          'Error: ' + error,
+          'Can\'t load cars:',
+          '! ' + error,
           { cancelable: false }
         )
       });
@@ -89,8 +89,8 @@ class CarsView extends Component {
       .catch(error => {
         console.log(error);
         Alert.alert(
-          'Delete Car error',
-          'Error: ' + error,
+          'Delete car error:',
+          '! ' + error,
           { cancelable: false }
         )
       });
@@ -191,11 +191,11 @@ class AddCarView extends React.Component {
             id: nextId,
             brand: this.state.brand,
             model: this.state.model,
-            price: this.state.price,
-            doors: this.state.doors,
+            price: parseFloat(this.state.price),
+            doors: parseInt(this.state.doors),
             color: this.state.color,
-            year: this.state.year,
-            km: this.state.km,
+            year: parseInt(this.state.year),
+            km: parseInt(this.state.km),
           });
         });
         this.props.navigation.state.params.ScreenCars.loadCars();
@@ -204,8 +204,8 @@ class AddCarView extends React.Component {
       .catch(error => {
         console.log(error);
         Alert.alert(
-          'Add Car error',
-          'Error: ' + error,
+          'Can\'t add new car:',
+          '! ' + error,
           { cancelable: false }
         )
       });
